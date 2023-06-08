@@ -15,9 +15,11 @@ const viewTestRouter = require("./routes/viewTest");
 //<--mount routes-->>
 app.use("/", viewTestRouter);
 const indexRouter = require("./routes/index");
+const signupGetRouter = require("./routes/signupGet");
 
 const port = 4001;
 
+app.use('/', signupGetRouter);
 app.use('/', indexRouter);
 app.listen(port, function () {
   console.log("Server running on port 4001");
