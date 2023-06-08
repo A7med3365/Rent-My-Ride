@@ -78,6 +78,8 @@ input:hover {
     align-items: center;
     justify-content: center;
     padding: 30px;
+    justify-content: space-evenly;
+
 }
 
 .ft-car1, .ft-car2, .ft-car3{
@@ -106,16 +108,18 @@ input:hover {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    padding: 40px;
+    padding: 20px;
+    justify-content: space-around;
+    font-weight: bold;
 }
+
 .seats-rates{
     display: flex;
-    justify-content: flex-start;
+    margin-right: 15px;
 }
 
 .selectCar{
     display: flex;
-    justify-content: flex-end;
 }
 
 .selectCar button{
@@ -124,10 +128,17 @@ input:hover {
     background-color: black;
     padding: 5px;
     width: 100px;
+    border: 0;
+    margin-left: 30px;
 }
 
 .seatCount img{
     width: 20px;
+}
+
+.seatCount{
+    margin-right: 10px;
+
 }
 
 .checked {
@@ -149,4 +160,61 @@ input:hover {
     font-size: larger;
     border: 0;
   }
+
+  .subhead-two{
+    display: flex;
+    margin: 45px;
+    justify-content: center;
+    font-size: larger;
+}
+
+.reviewIcon{
+    display: flex;
+    width: 50px;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.reviewBox{
+    display: flex;
+    border: 1.5px solid black;
+    width: 600px;
+    height: 300px;
+    border-radius: 30px;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: 60px;
+    text-align: center;
+    justify-content: center;
+    font-size: larger;
+    font-style: italic;
+}
+
+.testimonials{
+    display: flex;
+    flex-direction: row;
+    row-gap: 30px;
+    z-index: -1;
+}
+
+.arrow-left, .arrow-right{
+    display: flex;
+    align-items: center;
+
+}
+
+.arrow-left img{
+    width: 40px;
+    margin-top: -20px;
+    padding-left: 70px;
+   
+}
+.arrow-right img{
+    width: 40px;
+    margin-top: -20px;
+    padding-right: 70px;
+}
 
