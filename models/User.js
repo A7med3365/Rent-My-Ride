@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 const userSchema = mongoose.Schema(
   {
@@ -37,17 +37,22 @@ const userSchema = mongoose.Schema(
       type: "Number",
       default: 0,
     },
+    userType: {
+      type: String,
+      enum: ["admin", "user", "guest"],
+      default: "user",
+    },
   },
   {
     timestamps: true,
   }
 );
 
-// userSchema.methods.verfiyPasswords = function (password) {
-//   console.log("verifying password: ", password);
-//   console.log("verifying password: ", this.password);
-//   return bcrypt.compareSync(password, this.password);
-// };
+userSchema.methods.verfiyPasswords = function (password) {
+  console.log("verifying password: ", password);
+  console.log("verifying password: ", this.password);
+  return bcrypt.compareSync(password, this.password);
+};
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
