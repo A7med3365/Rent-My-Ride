@@ -40,6 +40,18 @@ input:hover {
     border: 1px solid #5eb2d6;
 }
 
+.loginBtn{
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    margin: 20px;
+    height: 40px;
+    justify-content: center;
+}
+
+
+/* Home Page CSS */
+
 .hero-image{
     display: flex;
     align-items: center;
