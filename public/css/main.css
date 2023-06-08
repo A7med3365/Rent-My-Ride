@@ -1,3 +1,7 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+
 /* Header CSS */
 a {
     margin: 5px;
@@ -35,3 +39,114 @@ input {
 input:hover {
     border: 1px solid #5eb2d6;
 }
+
+.hero-image{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.boxes{
+    display: flex;
+    flex-direction: row;
+    margin: 0 30px 50px 30px;
+}
+
+.box-one, .box-two, .box-three{
+        background-color: #EAEAFF;
+        padding: 40px;
+        margin: 15px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+}
+
+.subhead-one{
+    display: flex;
+    margin: 45px;
+    align-items: center;
+    font-size: larger;
+}
+
+.featuredCars{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.ft-car1, .ft-car2, .ft-car3{
+    padding: 10px;
+    margin: 15px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.ftCarImg{
+    width: 290px
+}
+
+.ft-car2 img{
+    width: 310px
+}
+.ft-car3 img{
+    width: 380px
+}
+
+.select-rating{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 40px;
+}
+.seats-rates{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.selectCar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.selectCar button{
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    width: 100px;
+}
+
+.seatCount img{
+    width: 20px;
+}
+
+.checked {
+    color: orange;
+  }
+
+  .rentCar{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .rentCarBtn{
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+    width: 40%;
+    padding: 15px;
+    font-weight: bolder;
+    font-size: larger;
+    border: 0;
+  }
+
