@@ -1,0 +1,37 @@
+/* Header CSS */
+a {
+    margin: 5px;
+}
+
+.container {
+    border: 1px solid black;
+}
+
+form {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+label, input {
+    font-size: 15px;
+    margin: 5px;
+    display: block;
+}
+
+input {
+
+    width: 250px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+input:hover {
+    border: 1px solid #5eb2d6;
+}
