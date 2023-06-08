@@ -15,15 +15,19 @@ const viewTestRouter = require("./routes/viewTest");
 //<--mount routes-->>
 app.use("/", viewTestRouter);
 const indexRouter = require("./routes/index");
+const signupGetRouter = require("./routes/signupGet");
+const signupPostRouter = require("./routes/signupPost");
 
 const port = 4001;
 
-app.use('/', indexRouter);
+app.use("/", signupPostRouter);
+app.use("/", signupGetRouter);
+app.use("/", indexRouter);
 app.listen(port, function () {
   console.log("Server running on port 4001");
 });
 mongoose
-  .connect("mongodb://127.0.0.1:27017/rentDB", {
+  .connect("mongodb+srv://Admin:34146466@carsurf.hxivufu.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
