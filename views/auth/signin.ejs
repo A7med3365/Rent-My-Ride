@@ -1,21 +1,21 @@
 <div class="container">
     
-    <form method="POST"  action="/auth/signin">
+    <form class="signin-form" method="POST"  action="/auth/signin">
         <div id="login-header">
             <h3>LOG INTO YOUR ACCOUNT</h3>
         </div>
         <div>
-            <label>Email</label>
-            <input type="email" name="email">
+            <label class="signin-label">Email</label>
+            <input class="signin-input" type="email" name="email">
         </div>
         <div>
-            <label>Password</label>
-            <input type="password" name="password">
+            <label class="signin-label">Password</label>
+            <input class="signin-input" type="password" name="password">
         </div>
-        <div>
-            <input class="loginBtn" type="submit" value="Login">
-            <p style="display: flex; justify-content: center;">OR</p>
-            <a href="#" style="display: flex; justify-content: center;">Sign in with Google</a>
+        <div id="sign-in-submit">
+            <input class="login-submit" type="submit" value="Login">
+            <br /><br />OR
+            <a href="#"><p>Sign in with Google</p></a>
         </div>
     </form>
 

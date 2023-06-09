@@ -53,7 +53,7 @@ a {
     border: 1px solid black;
 } */
 
-.signup-form {
+.signup-form, .signin-form {
   font-family: "Quicksand", sans-serif;
   display: flex;
   flex-direction: column;
@@ -65,14 +65,14 @@ a {
   /* background-color: #f6f6f6; */
 }
 
-.signup-label {
+.signup-label, .signin-label {
   font-weight: 600;
   font-size: 15px;
   margin: 5px;
   display: block;
 }
 
-.signup-input {
+.signup-input, .signin-input {
   margin: 5px;
   display: block;
   width: 250px;
@@ -91,7 +91,7 @@ a {
   box-shadow: 0 0 5px 1px #5eb2d6;
 }
 
-#create-acc-submit {
+#create-acc-submit, .login-submit {
   width: 150px;
   height: 30px;
   border: 1px solid black;
@@ -102,7 +102,7 @@ a {
   cursor: pointer;
 }
 
-#sign-up-submit {
+#sign-up-submit, #sign-in-submit {
   text-align: center;
   margin-top: 5px;
 }
