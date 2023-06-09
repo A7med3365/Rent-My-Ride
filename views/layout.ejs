@@ -13,19 +13,25 @@
   <body>
     <header>
       <nav>
-        <a>Carsurf</a>
-        <a>About Us</a>
-        <a>Rent A Car</a>
-        <a>Sign Up</a>
-        <a>Log In</a>
+        <ul class="container-nav-logo">
+          <li class="logo"><a>App Name</a></li>
+          <li class="navbar"><a>About Us</a></li>
+          <li class="navbar"><a>Rent A Car</a></li>
+          <li class="navbar"><a class="navbar" href="./auth/signup">Sign Up</a></li>
+          <li class="navbar"><a>Log In</a></li>
+        </ul>
       </nav>
     </header>
     <%- body %>
     <footer>
-      <a>About Us</a>
-      <a>Terms & Conditions</a>
-      <a>Contact</a>
-      <a>Follow Us</a>
+      <nav>
+        <ul class="container-footer">
+          <li><a>About Us</a></li>
+          <li><a>Terms & Conditions</a></li>
+          <li><a>Contact</a></li>
+          <li><a>Follow Us</a></li>
+      </ul>
+      </nav>
     </footer>
   </body>
 </html>
