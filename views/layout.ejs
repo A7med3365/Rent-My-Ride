@@ -5,20 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carsurf</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <nav>
         <ul class="container-nav-logo">
-          <li class="logo"><a>App Name</a></li>
+          <li class="logo"><a href="/">App Name</a></li>
+          <% if (currentUser) {%> <% if (currentUser.userType == 'admin') {%>
+          <li class="navbar">
+            <a class="navbar" href="/admin/Dashboard">Admins Dashboard</a>
+          </li>
+          <% }} %>
           <li class="navbar"><a>About Us</a></li>
           <li class="navbar"><a>Rent A Car</a></li>
-          <li class="navbar"><a class="navbar" href="./auth/signup">Sign Up</a></li>
-          <li class="navbar"><a>Log In</a></li>
+          <% if (currentUser) {%>
+          <a href="/user/signout">Log Out</a>
+          <br />
+          <li class="navbar"><%= currentUser.firstName %></li>
+          <% } else {%>
+          <li class="navbar">
+            <a class="navbar" href="/user/signup">Sign Up</a>
+          </li>
+          <li class="navbar">
+            <a href="/user/signin">Log In</a>
+          </li>
+          <% } %>
         </ul>
       </nav>
     </header>
@@ -30,7 +48,7 @@
           <li><a>Terms & Conditions</a></li>
           <li><a>Contact</a></li>
           <li><a>Follow Us</a></li>
-      </ul>
+        </ul>
       </nav>
     </footer>
   </body>

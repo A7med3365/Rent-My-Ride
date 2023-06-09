@@ -27,7 +27,7 @@ app.use(passport.session());
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -41,6 +41,13 @@ const signinPostRouter = require("./routes/signinPost");
 const fileUploadGetRouter = require("./routes/fileUploadGet");
 const userIndexRouter = require("./routes/userIndex");
 const fileUploadPostRouter = require("./routes/fileUploadPost");
+const signoutGetRouter = require("./routes/signoutGet");
+const adminDashboardGetRouter = require("./routes/adminDashboardGet");
+
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
 
 //<--mount routes-->>
 app.use("/", viewTestRouter);
@@ -50,8 +57,10 @@ app.use("/", indexRouter);
 app.use("/", signinGetRouter);
 app.use("/", signinPostRouter);
 app.use("/", fileUploadPostRouter);
-app.use('/', userIndexRouter);
+app.use("/", userIndexRouter);
 app.use("/", fileUploadGetRouter);
+app.use('/', adminDashboardGetRouter);
+app.use('/', signoutGetRouter);
 
 const port = 4001;
 
