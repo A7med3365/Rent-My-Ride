@@ -1,0 +1,30 @@
+<h2>My Profile</h2>
+
+<hr> 
+
+<form class="profile-form" method="POST" action="/user/profile">
+    <div>
+        <div class="profile-image">
+            <img src="">
+        </div>
+    </div>
+    <div>
+        <label class="profile-label">First Name</label>
+        <input class="profile-input" type="text" name="firstName" value="<%= %>">
+    </div>
+    <div>
+        <label class="profile-label">Last Name</label>
+        <input class="profile-input"type="text" name="lastName" value="<%= %>">
+    </div>
+    <div>
+        <label class="profile-label">Email</label>
+        <input class="profile-input"type="text" name="email" value="<%= %>">
+    </div>
+    <div>
+        <label class="profile-label">Phone Number</label>
+        <input class="profile-input"type="number" name="phoneNumber" value="<%= %>">
+    </div>
+    <div>
+        <button class="btn">Edit Profile</button>
+    </div>
+</form>

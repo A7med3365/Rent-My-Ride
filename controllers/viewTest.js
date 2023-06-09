@@ -1,4 +1,4 @@
 // viewTest.js
 exports.viewTest = function (req, res) {
-  res.render("home/index");
+  res.render("auth/signup");
 };

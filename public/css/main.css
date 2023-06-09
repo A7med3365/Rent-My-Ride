@@ -1,0 +1,148 @@
+/* --------------------------------------------Logo and Nav Bar CSS--------------------------------------------*/
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+nav {
+    height: 50px;
+}
+
+.container-nav-logo {
+    list-style: none;
+    display: flex;
+}
+
+.logo {
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.navbar {
+    flex-direction: row;
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar:hover {
+    color: #49a3c9;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-footer {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    background-color: lightslategray;
+    height: 200px;
+}
+
+/* --------------------------------------------Sign Up CSS--------------------------------------------*/
+a {
+    margin: 5px;
+}
+
+/* .container-signup {
+    border: 1px solid black;
+} */
+
+.signup-form {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    border: 3px solid #ececec;
+    border-radius: 3px;
+    width: 450px;
+    /* background-color: #f6f6f6; */
+}
+
+.signup-label {
+    font-weight: 600;
+    font-size: 15px;
+    margin: 5px;
+    display: block;
+}
+
+.signup-input {
+    margin: 5px;
+    display: block;
+    width: 250px;
+    height: 25px;
+    padding: 5px;
+    padding-inline-start: 10px;
+    border: 1px solid lightslategray;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    outline: none;
+    background-color: #f6f6f6;
+}
+
+.signup-input:focus {
+    border: 1px solid #5eb2d6;
+    box-shadow: 0 0 5px 1px #5eb2d6;
+}
+
+#create-acc-submit {
+    width: 150px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+}
+
+#sign-up-submit {
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* --------------------------------------------User Profile & Edit Profile Views CSS--------------------------------------------*/
+/* .profile-form, .editprofile-form {
+    border: 1px solid black; 
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start; 
+} */
+
+.profile-image, .edit-profile-image {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+
+.btn {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    width: 170px;
+    height: 30px;
+    margin: 10px;
+}
+
+.profile-label, .editprofile-label {
+    margin: 10px;
+    font-weight: 600;
+}
+
+.profile-input, .editprofile-input {
+    font-family: 'Quicksand', sans-serif;
+    display: block;
+    width: 400px;
+    height: 30px;
+    border: 1px solid lightslategray;
+    border-radius: 20px;
+    outline-color: #000000;
+    margin: 10px;
+    padding-inline-start: 10px;
+}
