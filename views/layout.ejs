@@ -12,12 +12,45 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%); /* Center the dropdown */
+      }
+
+      .dropdown-item:hover {
+        color: cornflowerblue;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav>
         <ul class="container-nav-logo">
-          <li class="logo"><a href="/">App Name</a></li>
+          <li class="logo"><a href="/">Car Surf</a></li>
           <% if (currentUser) {%> <% if (currentUser.userType == 'admin') {%>
           <li class="navbar">
             <a class="navbar" href="/admin/Dashboard">Admins Dashboard</a>
@@ -26,9 +59,16 @@
           <li class="navbar"><a>About Us</a></li>
           <li class="navbar"><a>Rent A Car</a></li>
           <% if (currentUser) {%>
+          <li class="navbar dropdown">
+            <span class="dropdown-toggle"> <%= currentUser.firstName %> </span>
+            <div class="dropdown-content">
+              <a class="dropdown-item" href="/user/profile">Profile</a>
+              <a class="dropdown-item" href="/user/posts">Posts</a>
+              <a class="dropdown-item" href="/user/chats">Chats</a>
+              <a class="dropdown-item" href="/user/disputes">Disputes</a>
+            </div>
+          </li>
           <a href="/user/signout">Log Out</a>
-          <br />
-          <li class="navbar"><%= currentUser.firstName %></li>
           <% } else {%>
           <li class="navbar">
             <a class="navbar" href="/user/signup">Sign Up</a>
