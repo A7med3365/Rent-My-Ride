@@ -43,6 +43,8 @@ const userIndexRouter = require("./routes/userIndex");
 const fileUploadPostRouter = require("./routes/fileUploadPost");
 const signoutGetRouter = require("./routes/signoutGet");
 const adminDashboardGetRouter = require("./routes/adminDashboardGet");
+const profileGetRouter = require("./routes/profileGet");
+const profileEditGetRouter = require("./routes/profileEditGet");
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -59,6 +61,8 @@ app.use("/", signinPostRouter);
 app.use("/", fileUploadPostRouter);
 app.use("/", userIndexRouter);
 app.use("/", fileUploadGetRouter);
+app.use('/', profileEditGetRouter);
+app.use('/', profileGetRouter);
 app.use('/', adminDashboardGetRouter);
 app.use('/', signoutGetRouter);
 
