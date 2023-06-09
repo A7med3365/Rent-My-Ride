@@ -42,6 +42,11 @@ const userSchema = mongoose.Schema(
       enum: ["admin", "user", "guest"],
       default: "user",
     },
+    profilePicture: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "File",
+      default: "6482f1008f345bb1607b3354",
+    },
   },
   {
     timestamps: true,

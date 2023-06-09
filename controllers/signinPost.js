@@ -1,5 +1,5 @@
 // signinPost.js
-const passport = require("../Auth/passportConfig");
+const passport = require("../config/Auth/passportConfig");
 
 exports.signinPost = passport.authenticate("local", {
   successRedirect: "/",

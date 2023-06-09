@@ -3,7 +3,13 @@ const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
 const session = require("express-session");
-const passport = require("./Auth/passportConfig");
+const passport = require("./config/Auth/passportConfig");
+
+const multer = require("multer");
+const storage = require("./config/file/uploadConfig");
+
+// const upload = multer({ storage: storage });
+const upload = multer({ dest: "public/uploads" });
 
 const app = express();
 
@@ -30,6 +36,9 @@ const signupGetRouter = require("./routes/signupGet");
 const signupPostRouter = require("./routes/signupPost");
 const signinGetRouter = require("./routes/signinGet");
 const signinPostRouter = require("./routes/signinPost");
+const fileUploadGetRouter = require("./routes/fileUploadGet");
+const userIndexRouter = require("./routes/userIndex");
+const fileUploadPostRouter = require("./routes/fileUploadPost");
 
 //<--mount routes-->>
 app.use("/", viewTestRouter);
@@ -38,6 +47,9 @@ app.use("/", signupGetRouter);
 app.use("/", indexRouter);
 app.use("/", signinGetRouter);
 app.use("/", signinPostRouter);
+app.use("/", fileUploadPostRouter);
+app.use('/', userIndexRouter);
+app.use("/", fileUploadGetRouter);
 
 const port = 4001;
 

@@ -1,0 +1,22 @@
+<h3>user Index</h3>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>last name</th>
+    <th>email</th>
+    <th>phone number</th>
+    <th>joined since</th>
+    <th>profile pic</th>
+  </tr>
+  <% users.forEach(function(user){ %>
+  <tr>
+    <td><%= user.firstName %></td>
+    <td><%= user.lastName %></td>
+    <td><%= user.email %></td>
+    <td><%= user.phoneNumber %></td>
+    <td><%= user.joined %></td>
+    <td><%= user.profilePicture %></td>
+  </tr>
+  <% }) %>
+</table>
