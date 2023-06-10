@@ -1,34 +1,56 @@
 <h2>Edit Profile</h2>
 
-<hr>
+<hr />
 
-<form class="editprofile-form" method="POST" action="/user/edit-profile">
-    <div class="edit-profile-image">
-        
-        <img src="">
-        
-    </div>
-    <div>
-        <button class="btn">Upload Profile Image</button>
-    </div>
-    <div>
-        <label class="editprofile-label">First Name</label>
-        <input class="editprofile-input" type="text" name="firstName" value="<%= %>">
-    </div>
-    <div>
-        <label class="editprofile-label">Last Name</label>
-        <input class="editprofile-input"type="text" name="lastName" value="<%= %>">
-    </div>
-    <div>
-        <label class="editprofile-label">Email</label>
-        <input class="editprofile-input"type="text" name="email" value="<%= %>">
-    </div>
-    <div>
-        <label class="editprofile-label">Phone Number</label>
-        <input class="editprofile-input"type="number" name="phoneNumber" value="<%= %>">
-    </div>
-    <div class="edit-btns">
-        <button class="btn">Save</button>
-        <button class="btn">Change password</button>
-    </div>
+<div class="edit-profile-image">
+  <img src="" />
+</div>
+<form method="POST" action="/file/upload" enctype="multipart/form-data">
+  <input type="file" name="file" />
+  <div>
+    <button type="submit" class="btn">Upload Profile Image</button>
+  </div>
+</form>
+<form class="editprofile-form" method="POST" action="edit-profile">
+  <div>
+    <label class="editprofile-label">First Name</label>
+    <input
+      class="editprofile-input"
+      type="text"
+      name="firstName"
+      value="<%=user.firstName %>"
+    />
+  </div>
+  <div>
+    <label class="editprofile-label">Last Name</label>
+    <input
+      class="editprofile-input"
+      type="text"
+      name="lastName"
+      value="<%= user.lastName%>"
+    />
+  </div>
+  <div>
+    <label class="editprofile-label">Email</label>
+    <input
+      class="editprofile-input"
+      type="text"
+      name="email"
+      value="<%=user.email %>"
+    />
+  </div>
+  <div>
+    <label class="editprofile-label">Phone Number</label>
+    <input
+      class="editprofile-input"
+      type="number"
+      name="phoneNumber"
+      value="<%=user.phoneNumber %>"
+    />
+  </div>
+  <input type="hidden" name="id" value="<%=user._id%>" />
+  <div class="edit-btns">
+    <button type="submit" class="btn">Save</button>
+    <button class="btn">Change password</button>
+  </div>
 </form>

@@ -1,4 +1,4 @@
 // profileGet.js
 exports.profileGet = function (req, res) {
-  res.render("user/profile", { title: "Profile" });
+  res.render("user/profile", { title: "Profile", user: req.user });
 };

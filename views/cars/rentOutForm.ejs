@@ -1,0 +1,53 @@
+<h1 id="rentOutHeading">Rent Out My Vehicle</h1>
+
+<form class="rentOutForm" method="POST" action="/cars/uploadCar" enctype="multipart/form-data">
+    
+    <div>
+        <label class="rentOut-label">Car Make</label>
+        <input class="rentOut-input" type="text" name="carMake">
+    </div>
+    <div>
+        <label class="rentOut-label">Car Model</label>
+        <input class="rentOut-input" type="text" name="carModel">
+    </div>
+    <div>
+        <label class="rentOut-label">Year</label>
+        <input class="rentOut-input" type="number" name="carOwner">
+    </div>
+    <div>
+        <label class="rentOut-label">Owner</label>
+        <input class="rentOut-input" type="text" name="carOwner">
+    </div>
+    <div>
+        <label class="rentOut-label">Fuel Tank Size</label>
+        <input class="rentOut-input" type="text" name="fuelTankSize">
+    </div>
+    <div>
+        <label class="rentOut-label">Fuel Type</label>
+        <input class="rentOut-input" type="text" name="fuelType">
+    </div>
+    <div>
+        <label class="rentOut-label">Number of Seats</label>
+        <input class="rentOut-input" type="number" name="numberOfSeats">
+    </div>
+    <div>
+        <label class="rentOut-label">Number of Doors</label>
+        <input class="rentOut-input" type="number" name="numberOfDoors">
+    </div>
+    <div>
+        <label class="rentOut-label">Features</label>
+        <input class="rentOut-input" type="text" name="features">
+    </div>
+    <div>
+        <label class="rentOut-label">Description</label>
+        <input class="rentOut-input" type="text" name="description">
+    </div>
+    <div>
+        <label class="rentOut-label">Images</label>
+        <input type="file" name="file">
+        <button class="file-btn" type="submit">Upload</button>
+    </div>
+    <div>
+        <input class="submit-btn" type="submit">
+    </div>
+</form>
