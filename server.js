@@ -2,16 +2,18 @@ const mongoose = require("mongoose");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
+const http = require("http");
+const { Server } = require("socket.io");
+
 const session = require("express-session");
 const passport = require("./config/Auth/passportConfig");
 
-const multer = require("multer");
-const storage = require("./config/file/uploadConfig");
-
-// const upload = multer({ storage: storage });
-const upload = multer({ dest: "public/uploads" });
-
 const app = express();
+
+const server = http.createServer(app); // create HTTP server
+const io = new Server(server); // create Socket.IO server
+
+module.exports = io;
 
 app.use(
   session({
@@ -45,10 +47,10 @@ const signoutGetRouter = require("./routes/signoutGet");
 const adminDashboardGetRouter = require("./routes/adminDashboardGet");
 const profileGetRouter = require("./routes/profileGet");
 const profileEditGetRouter = require("./routes/profileEditGet");
-const rentOutGetRoute = require('./routes/rentOutGet');
-const rentOutPostRoute = require('./routes/rentOutPost');
+const rentOutGetRoute = require("./routes/rentOutGet");
+const chatClientTestGetRouter = require("./routes/chatClientTestGet");
+const rentOutPostRoute = require("./routes/rentOutPost");
 const profileEditPostRouter = require("./routes/profileEditPost");
-
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -65,19 +67,25 @@ app.use("/", signinPostRouter);
 app.use("/", fileUploadPostRouter);
 app.use("/", userIndexRouter);
 app.use("/", fileUploadGetRouter);
-app.use('/', profileEditPostRouter);
-app.use('/', profileEditGetRouter);
-app.use('/', profileGetRouter);
-app.use('/', adminDashboardGetRouter);
-app.use('/', signoutGetRouter);
-app.use('/', rentOutGetRoute);
-app.use('/', rentOutPostRoute);
+app.use("/", profileEditPostRouter);
+app.use("/", profileEditGetRouter);
+app.use("/", profileGetRouter);
+app.use("/", adminDashboardGetRouter);
+app.use("/", signoutGetRouter);
+app.use("/", rentOutGetRoute);
+app.use("/", chatClientTestGetRouter);
+app.use("/", rentOutPostRoute);
+
+const onConn = require("./config/chat/onConn");
+
+io.on("connection", onConn.onConnection);
 
 const port = 4001;
 
-app.listen(port, function () {
+server.listen(port, function () {
   console.log("Server running on port 4001");
 });
+
 mongoose
   .connect("mongodb+srv://Admin:34146466@carsurf.hxivufu.mongodb.net/", {
     useNewUrlParser: true,
