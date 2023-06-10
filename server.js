@@ -47,6 +47,8 @@ const profileGetRouter = require("./routes/profileGet");
 const profileEditGetRouter = require("./routes/profileEditGet");
 const rentOutGetRoute = require('./routes/rentOutGet');
 const rentOutPostRoute = require('./routes/rentOutPost');
+const profileEditPostRouter = require("./routes/profileEditPost");
+
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -63,6 +65,7 @@ app.use("/", signinPostRouter);
 app.use("/", fileUploadPostRouter);
 app.use("/", userIndexRouter);
 app.use("/", fileUploadGetRouter);
+app.use('/', profileEditPostRouter);
 app.use('/', profileEditGetRouter);
 app.use('/', profileGetRouter);
 app.use('/', adminDashboardGetRouter);

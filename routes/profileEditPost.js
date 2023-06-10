@@ -1,13 +1,13 @@
 const express = require("express");
 
-const profileEditGetCtrl = require("../controllers/profileEditGet");
+const profileEditPostCtrl = require("../controllers/profileEditPost");
 const isLoggedin = require("../config/Auth/ensureAthenticated");
 const router = express.Router();
 
-router.get(
+router.post(
   "/user/edit-profile",
   isLoggedin.ensureAthenticated,
-  profileEditGetCtrl.profileEditGet
+  profileEditPostCtrl.profileEditPost
 );
 
 module.exports = router;
