@@ -45,7 +45,10 @@ const signoutGetRouter = require("./routes/signoutGet");
 const adminDashboardGetRouter = require("./routes/adminDashboardGet");
 const profileGetRouter = require("./routes/profileGet");
 const profileEditGetRouter = require("./routes/profileEditGet");
+const rentOutGetRoute = require('./routes/rentOutGet');
+const rentOutPostRoute = require('./routes/rentOutPost');
 const profileEditPostRouter = require("./routes/profileEditPost");
+
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -67,6 +70,8 @@ app.use('/', profileEditGetRouter);
 app.use('/', profileGetRouter);
 app.use('/', adminDashboardGetRouter);
 app.use('/', signoutGetRouter);
+app.use('/', rentOutGetRoute);
+app.use('/', rentOutPostRoute);
 
 const port = 4001;
 
