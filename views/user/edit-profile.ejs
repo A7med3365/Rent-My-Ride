@@ -2,13 +2,16 @@
 
 <hr />
 
-<form class="editprofile-form" method="POST" action="edit-profile">
-  <div class="edit-profile-image">
-    <img src="" />
-  </div>
+<div class="edit-profile-image">
+  <img src="" />
+</div>
+<form method="POST" action="/file/upload" enctype="multipart/form-data">
+  <input type="file" name="file" />
   <div>
-    <button class="btn">Upload Profile Image</button>
+    <button type="submit" class="btn">Upload Profile Image</button>
   </div>
+</form>
+<form class="editprofile-form" method="POST" action="edit-profile">
   <div>
     <label class="editprofile-label">First Name</label>
     <input
@@ -47,7 +50,7 @@
   </div>
   <input type="hidden" name="id" value="<%=user._id%>" />
   <div class="edit-btns">
-    <button class="btn">Save</button>
+    <button type="submit" class="btn">Save</button>
     <button class="btn">Change password</button>
   </div>
 </form>
