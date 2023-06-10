@@ -26,6 +26,10 @@ const carSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    fuelType: {
+        type: String,
+        required: true
+    },
     numberOfSeats: {
         type: Number,
         required: true
