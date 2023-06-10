@@ -1,5 +1,5 @@
 const express = require("express");
-
+const isLoggedin = require("../config/Auth/ensureAthenticated");
 const fileUploadPostCtrl = require("../controllers/fileUploadPost");
 
 const router = express.Router();
@@ -12,6 +12,7 @@ const upload = multer({ storage: storage });
 
 router.post(
   "/file/upload",
+  isLoggedin.ensureAthenticated,
   upload.single("file"),
   fileUploadPostCtrl.fileUploadPost
 );
