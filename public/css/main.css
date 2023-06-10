@@ -350,3 +350,38 @@ a {
   margin-top: -20px;
   padding-right: 70px;
 }
+
+/*--------------------------------------------Rent Out Form CSS-------------------------------------------- */
+#rentOutHeading {
+  text-align: center;
+  font-size: 50px;
+}
+
+.rentOut-label {
+  display: block;
+  margin: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.rentOut-input {
+  width: 500px;
+  height: 35px;
+  margin: 10px;
+  border: 1px solid lightslategray;
+  border-radius: 20px;
+  padding-inline-start: 10px;
+  outline-color: #000000;
+}
+
+.file-btn, 
+.submit-btn {
+  background-color: #000000;
+  color:#ffffff;
+  border: 1px solid lightslategray;
+  border-radius: 20px;
+  font-size: 12px;
+  width: 170px;
+  height: 30px;
+  margin: 10px;
+}
