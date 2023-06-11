@@ -389,6 +389,10 @@ a {
 
 /*--------------------------------------------All Cars Index CSS-------------------------------------------- */
 
+.colorBg{
+    background-color: rgb(241, 239, 239);
+    padding: 2px;
+}
 .carHeaderSearch{
     display: flex;
     flex-direction: row;
@@ -401,9 +405,53 @@ a {
 }
 
 .headerSearchForm{
-    border: 1px solid grey;
+    border: 1px solid rgb(179, 179, 179);
     width: 800px;
     margin-left: 20px;
     padding: 30px;
     border-radius: 30px;
+}
+
+.carsDisplayBody{
+    display: flex;
+    /* flex-direction: row; */
+    margin: 20px;
+    padding: 10px
+}
+
+.filterCarsBy{
+    width: 255px;
+    margin-right: 5px;
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 30px;
+    padding: 30px;
+    background-color: white;
+
+}
+
+.allCarsDisplay{
+    /* display: flex; */
+    width: 1500px;
+    margin-left: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+}
+
+.carsMiniDisplay{
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 1px solid rgb(179, 179, 179);
+    width: 250px;
+
+}
+.carsMiniDisplay .carImg{
+    width: 50%;
+}
+
+.carsMiniDisplay p{
+    font-size: smaller;
 }
