@@ -386,3 +386,24 @@ a {
   height: 30px;
   margin: 10px;
 }
+
+/*--------------------------------------------All Cars Index CSS-------------------------------------------- */
+
+.carHeaderSearch{
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+}
+
+.headerSearchLeft{
+    width: 350px;
+    margin-right: 20px;
+}
+
+.headerSearchForm{
+    border: 1px solid grey;
+    width: 800px;
+    margin-left: 20px;
+    padding: 30px;
+    border-radius: 30px;
+}

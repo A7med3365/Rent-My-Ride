@@ -17,6 +17,10 @@ const carSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    carType: {
+        type: String,
+        required: true
+    },
     carOwner:{
         type: String,
         ref: "User",
@@ -44,6 +48,10 @@ const carSchema = new mongoose.Schema({
     },
     description: {
         type: String,
+    },
+    dailyPrice:{
+        type: String,
+        required: true
     }
 
 });

@@ -14,3 +14,6 @@ exports.profileTest = function (req, res) {
 exports.editProfileTest = function (req, res) {
   res.render("user/edit-profile");
 };
+exports.carsTest = function (req, res) {
+  res.render("cars/index");
+};
