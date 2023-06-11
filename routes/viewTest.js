@@ -8,4 +8,5 @@ router.get("/test", viewTestCtrl.viewTest);
 router.get("/test-login", viewTestCtrl.loginTest);
 router.get("/test-profile", viewTestCtrl.profileTest);
 router.get("/test-editProfile", viewTestCtrl.editProfileTest);
+router.get("/test-cars", viewTestCtrl.carsTest);
 module.exports = router;
