@@ -412,6 +412,28 @@ a {
     border-radius: 30px;
 }
 
+.headerSearchForm h5{
+    margin: 15px 30px;
+}
+.headerSearchForm input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid grey;
+    background-color: rgb(230, 239, 255);
+}
+
+.headSearchTopRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.headSearchDateRow, .headSearchTimeRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
 .carsDisplayBody{
     display: flex;
     /* flex-direction: row; */
@@ -427,6 +449,10 @@ a {
     padding: 30px;
     background-color: white;
 
+}
+
+.filterCarsBy label{
+    font-size: smaller;
 }
 
 .allCarsDisplay{

@@ -1,19 +1,68 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+
 <div class="headerSurround">
 <div class="carHeaderSearch">
     <div class="headerSearchLeft">
         <h2>Renting a car has never been easier</h2>
         <p>A super easy way to rent a car directly from its owner or put your own car up for rent in minutes!</p>
     </div>
-    <div class="headerSearchForm">form here</div>
+    <div class="headerSearchForm">
+        <div class="headSearchTopRow">
+       <h5> <span class="fa fa-map" style="color: #000000;"></span> Pick-up</h5>
+       <input type="text" id="pickUpLocation" name="pickUpLocation" value="Manama, Bahrain">
+      
+       <h5> <span class="fa fa-map" style="color: #000000;"></span> Drop-off</h5>
+       <input type="text" id="dropOffLocation" name="dropOffLocation" value="Manama, Bahrain">
+       
+    </div>
+       <div class="headSearchDateRow">
+       <h5> <span class="fa fa-calendar" style="color: #000000;"></span> Pick-up Date</h5>
+       <input type="date" id="pickUpDate" name="pickUpDate" value="">
+       <h5> <span class="fa fa-calendar" style="color: #000000;"></span> Drop-off Date</h5>
+       <input type="date" id="dropOffDate" name="dropOffDate" value="">
+      </div>
+      <div class="headSearchTimeRow">
+       <h5> <span class="fa fa-bell" style="color: #000000;"></span> Pick-up Time</h5>
+       <input type="time" id="pickUpTime" name="pickUpTime" value="10:00:00">
+       <h5> <span class="fa fa-bell" style="color: #000000;"></span> Drop-off Time</h5>
+       <input type="time" id="dropOffTime" name="dropOffTime" value="10:00:00">
+
+    </div>
+    </div>
 </div>
 </div>
 
 <div class="colorBg">
 <div class="carsDisplayBody">
 <div class="filterCarsBy">
-    filter details
+    <h3> <span class="fa fa-filter" style="color: #000000;"></span> Filter By:</h3>
+    <h5>Car Type</h5>
+    <!-- ejs tags car types -->
+    <input type="checkbox" id="sedan" name="carType" value="sedan">
+    <label for="sedan">Sedan</label><br>
+    <input type="checkbox" id="hatchback" name="carType" value="hatchback">
+    <label for="hatchback">Hatchback</label><br>
+    <input type="checkbox" id="coupe" name="carType" value="coupe">
+    <label for="coupe">Coupe</label><br>
+    <input type="checkbox" id="suv" name="carType" value="suv">
+    <label for="suv">SUV</label><br>
+
+    <h5>Seat Capacity</h5>
+    <!-- ejs seat choices-->
+    <input type="checkbox" id="belowFive" name="numberOfSeats" value="belowFive">
+    <label for="belowFive">2 to 5</label><br>
+    <input type="checkbox" id="sixPlus" name="numberOfSeats" value="sixPlus">
+    <label for="sixPlus">6 or More</label><br>
+
+    <h5>Rating</h5>
+    <!-- ejs rating percentages -->
+    <input type="checkbox" id="eightyPlus" name="carRating" value="80%">
+    <label for="eightyPlus">80% & Higher</label><br>
+
+    <input type="checkbox" id="fiftyPlus" name="carRating" value="50%">
+    <label for="fiftyPlus">50% & Higher</label><br>
 </div>
 
 <div class="allCarsDisplay">
