@@ -48,6 +48,7 @@ const profileEditGetRouter = require("./routes/profileEditGet");
 const rentOutGetRoute = require('./routes/rentOutGet');
 const rentOutPostRoute = require('./routes/rentOutPost');
 const profileEditPostRouter = require("./routes/profileEditPost");
+const carDetailRoute = require('./routes/carDetail');
 
 
 app.use(function (req, res, next) {
@@ -72,11 +73,12 @@ app.use('/', adminDashboardGetRouter);
 app.use('/', signoutGetRouter);
 app.use('/', rentOutGetRoute);
 app.use('/', rentOutPostRoute);
+app.use('/', carDetailRoute);
 
 const port = 4001;
 
 app.listen(port, function () {
-  console.log("Server running on port 4001");
+  console.log(`Server running on ${port}`);
 });
 mongoose
   .connect("mongodb+srv://Admin:34146466@carsurf.hxivufu.mongodb.net/", {

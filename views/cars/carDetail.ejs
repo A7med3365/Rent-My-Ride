@@ -1,0 +1,44 @@
+<h1 class="car-detail-heading">Your Deal</h1>
+
+<div class="main-div">
+    <div class="sub-div">
+        <div class="car-img-upload">
+            <img <%= car.carImages %>>
+        </div>
+        <div class="subsecond-div">
+            <h3>Model: <%= car.carModel %></h3>
+            <ul>
+                <li>Car Make: <%= car.carMake %></li>
+                <li>Car Type: <%= car.carType %></li>
+                <li>No. of Seats: <%= car.numberOfSeats %></li>
+                <li>Fuel Type: <%= car.fuelType %></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-div">
+        <h3>Description</h3>
+        <p><%= car.description %></p>
+    </div>
+    
+</div>
+
+<div class="branch-div">
+    <div class="sub1-div">
+        <h3>What is included</h3>
+           <ul>
+               <li>Free cancellation up to 48 hours before pick up</li>
+               <li>Collision Damage Wavier (CDW)</li>
+               <li>Theft Protection</li>
+               <li>Third-Party Liability (TPL)</li>
+               <li>483 km per rental</li>
+           </ul>
+   </div>
+   <div class="sub2-div">
+    <h4>Price per day</h4>
+    <p>BHD <%= car.dailyPrice %> </p>
+    <hr>
+    <button class="detail-btn">Reserve</button>
+    <button class="detail-btn">Contact Owner</button>
+   </div>
+</div>
