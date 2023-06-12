@@ -4,9 +4,7 @@ const User = require("../models/User");
 exports.chatsIndexGet = async function (req, res) {
   const userId = req.user._id;
   const chats = await Chat.find({
-    users: {
-      $elemMatch: { $in: [userId] },
-    },
+    users: { $in: [userId] },
   });
   console.log(chats);
 

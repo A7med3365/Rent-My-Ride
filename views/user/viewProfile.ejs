@@ -1,0 +1,14 @@
+<div id="user-name"><%= user.firstName %> <%= user.lastName %></div>
+<div id="joined">joined since: <%= user.joined %></div>
+<div id="rating">rating: <%= user.rating %></div>
+<div
+  class="chat"
+  style="border: 1px solid lightgray; background-color: lightgray; width: 10%"
+>
+  <a
+    href="/test/chat?receiverId=<%= user._id %>"
+    style="display: block; height: 100%; width: 100%"
+  >
+    start a chat
+  </a>
+</div>

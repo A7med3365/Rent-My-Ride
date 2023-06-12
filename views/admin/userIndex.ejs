@@ -1,0 +1,30 @@
+<% for (const user of users) {%>
+<div class="userI">
+  <a href="/profile/view?user=<%= user._id %>">
+    <%= user.firstName %> <%= user.lastName %>
+  </a>
+</div>
+<% } %>
+
+<style>
+  .userI {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .userI a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+  }
+</style>

@@ -6,12 +6,14 @@ exports.onConnection = function (socket) {
 
   socket.on("join", async (senderId, receiverId) => {
     try {
+      // console.log(senderId, receiverId);
       // Check if the chat room already exists
       const existingChat = await Chat.findOne({
         users: {
-          $elemMatch: { $in: [senderId, receiverId] },
+          $all: [senderId, receiverId],
         },
       });
+      console.log(existingChat);
 
       if (existingChat) {
         const chatRoom = existingChat._id.toString();
@@ -57,11 +59,11 @@ exports.onConnection = function (socket) {
   socket.on("chat message", async (senderId, receiverId, msg) => {
     const chat = await Chat.findOne({
       users: {
-        $elemMatch: { $in: [senderId, receiverId] },
+        $all: [senderId, receiverId],
       },
     });
     const chatRoom = chat._id.toString();
-    console.log(chatRoom);
+    // console.log(chatRoom);
     chat.messages.push({
       sender: senderId,
       content: msg,

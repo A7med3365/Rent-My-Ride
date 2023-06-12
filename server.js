@@ -52,6 +52,8 @@ const chatClientTestGetRouter = require("./routes/chatClientTestGet");
 const rentOutPostRoute = require("./routes/rentOutPost");
 const profileEditPostRouter = require("./routes/profileEditPost");
 const chatsIndexGetRouter = require("./routes/chatsIndexGet");
+const userIndexGetRouter = require("./routes/userIndexGet");
+const viewProfileGetRouter = require("./routes/viewProfileGet");
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -76,6 +78,8 @@ app.use("/", signoutGetRouter);
 app.use("/", rentOutGetRoute);
 app.use("/", chatClientTestGetRouter);
 app.use("/", rentOutPostRoute);
+app.use('/', viewProfileGetRouter);
+app.use('/', userIndexGetRouter);
 app.use('/', chatsIndexGetRouter);
 
 const onConn = require("./config/chat/onConn");
