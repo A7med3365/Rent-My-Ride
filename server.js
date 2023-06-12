@@ -50,6 +50,7 @@ const rentOutPostRoute = require('./routes/rentOutPost');
 const profileEditPostRouter = require("./routes/profileEditPost");
 const carDetailRoute = require('./routes/carDetail');
 const carsIndexRoute = require('./routes/carsIndex');
+const bookingRequestRoute = require('./routes/bookingRequest');
 
 
 app.use(function (req, res, next) {
@@ -76,6 +77,7 @@ app.use('/', rentOutGetRoute);
 app.use('/', rentOutPostRoute);
 app.use('/', carDetailRoute);
 app.use('/', carsIndexRoute);
+app.use('/', bookingRequestRoute);
 
 const port = 4001;
 
