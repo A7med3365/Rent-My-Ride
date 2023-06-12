@@ -52,6 +52,7 @@ const chatClientTestGetRouter = require("./routes/chatClientTestGet");
 const rentOutPostRoute = require("./routes/rentOutPost");
 const profileEditPostRouter = require("./routes/profileEditPost");
 const carDetailRoute = require("./routes/carDetail");
+const carsIndexRoute = require("./routes/carsIndex");
 
 const chatsIndexGetRouter = require("./routes/chatsIndexGet");
 const multiFileUploadGetRouter = require("./routes/multiFileUploadGet");
@@ -89,7 +90,8 @@ app.use("/", chatClientTestGetRouter);
 app.use("/", viewProfileGetRouter);
 app.use("/", userIndexGetRouter);
 app.use("/", chatsIndexGetRouter);
-app.use('/', userCarPostsGetRouter);
+app.use("/", userCarPostsGetRouter);
+app.use("/", carsIndexRoute);
 
 const onConn = require("./config/chat/onConn");
 
