@@ -1,0 +1,10 @@
+<% for (const chat of DMs) {%>
+<div class="chat" uid="<%chat.otherUser._id %>"></div>
+  <%= chat.otherUser.firstName %> <%= chat.otherUser.lastName %>
+</div>
+<% } %>
+
+<script>
+  const chats = document.querySelectorAll(".chat");
+  chats;
+</script>
