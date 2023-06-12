@@ -1,6 +1,6 @@
 // viewTest.js
 exports.viewTest = function (req, res) {
-  res.render("cars/rentOutForm");
+  res.render("cars/carDetail");
 };
 
 exports.loginTest = function (req, res) {

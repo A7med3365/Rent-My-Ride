@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const carSchema = new mongoose.Schema({
     carImages: [{
-        required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        // required: true,
         ref: "File"
     }],
     carMake: {
@@ -22,9 +23,9 @@ const carSchema = new mongoose.Schema({
         required: true
     },
     carOwner:{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        required: true
+        // required: true
     },
     fuelTankSize: {
         type: String,
@@ -51,8 +52,11 @@ const carSchema = new mongoose.Schema({
     },
     dailyPrice:{
         type: String,
-        required: true
+        // required: true
     }
 
 });
 
+const Car = mongoose.model('Car', carSchema)
+
+module.exports = Car;
