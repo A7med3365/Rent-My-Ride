@@ -15,8 +15,17 @@ exports.onConnection = function (socket) {
 
       if (existingChat) {
         const chatRoom = existingChat._id.toString();
-        console.log(senderId + "joined" + chatRoom);
+        console.log(senderId + " joined " + chatRoom);
         socket.join(chatRoom);
+
+        // Retrieve and emit existing messages
+        const messages = existingChat.messages.map((message) => {
+          return `${message.content}`;
+        });
+        console.log(messages);
+        for (const msg of messages) {
+          io.to(chatRoom).emit("chat message", msg);
+        }
       } else {
         // Create a new chat room
         const chat = new Chat({
