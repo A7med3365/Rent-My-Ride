@@ -20,7 +20,7 @@ app.use(
     secret: "thisisasecret",
     saveUninitialized: true,
     resave: false,
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 600000000 },
   })
 );
 app.use(passport.initialize());
@@ -54,8 +54,11 @@ const profileEditPostRouter = require("./routes/profileEditPost");
 const carDetailRoute = require("./routes/carDetail");
 
 const chatsIndexGetRouter = require("./routes/chatsIndexGet");
+const multiFileUploadGetRouter = require("./routes/multiFileUploadGet");
+const multiFileUploadPostRouter = require("./routes/multiFileUploadPost");
 const userIndexGetRouter = require("./routes/userIndexGet");
 const viewProfileGetRouter = require("./routes/viewProfileGet");
+const userCarPostsGetRouter = require("./routes/userCarPostsGet");
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -78,12 +81,15 @@ app.use("/", profileGetRouter);
 app.use("/", adminDashboardGetRouter);
 app.use("/", signoutGetRouter);
 app.use("/", rentOutGetRoute);
+app.use("/", multiFileUploadPostRouter);
+app.use("/", multiFileUploadGetRouter);
 app.use("/", rentOutPostRoute);
 app.use("/", carDetailRoute);
 app.use("/", chatClientTestGetRouter);
 app.use("/", viewProfileGetRouter);
 app.use("/", userIndexGetRouter);
 app.use("/", chatsIndexGetRouter);
+app.use('/', userCarPostsGetRouter);
 
 const onConn = require("./config/chat/onConn");
 
