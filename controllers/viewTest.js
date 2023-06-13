@@ -1,6 +1,10 @@
 // viewTest.js
-exports.viewTest = function (req, res) {
-  res.render("cars/carDetail");
+const Car = require('../models/Car');
+
+exports.viewTest = async function (req, res) {
+  const cars = await Car.find();
+  console.log("Car", cars);
+  res.render('cars/index', { cars });
 };
 
 exports.loginTest = function (req, res) {

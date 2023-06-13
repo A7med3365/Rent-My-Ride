@@ -3,6 +3,6 @@ exports.ensureAthenticated = function (req, res, next) {
     console.log(req.user);
     next();
   } else {
-    res.redirect("/");
+    res.redirect("/user/signin");
   }
 };
