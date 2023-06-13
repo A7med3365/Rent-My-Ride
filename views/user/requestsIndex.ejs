@@ -1,0 +1,105 @@
+<div class="requests">
+  <% for( request of userRequests ) { %>
+  <div class="reqItem">
+    <h4>
+      <%= request.car.carMake %> <%= request.car.carModel %> <%=
+      request.car.carYear %>
+    </h4>
+    <p>car ID: <%= request.car._id %></p>
+    <p>
+      request by: <%= request.renter.firstName %> <%= request.renter.lastName %>
+    </p>
+    <p>booked from: <%= request.startDate %></p>
+    <p>booked to: <%= request.endDate %></p>
+    <p class="status <%= request.status.toLowerCase() %>">
+      <%= request.status %>
+    </p>
+    <% if (request.status.toLowerCase() === 'pending') { %>
+    <a
+      href="/request/accepted?bookingId=<%= request._id %>"
+      class="button-accept"
+      >accept</a
+    >
+    <a
+      href="/request/rejected?bookingId=<%= request._id %>"
+      class="button-reject"
+      >reject</a
+    >
+    <% } else { %>
+    <a
+      href="/request/accepted?bookingId=<%= request._id %>"
+      class="button-accept disabled"
+      onclick="return false;"
+      >accept</a
+    >
+    <a
+      href="/request/rejected?bookingId=<%= request._id %>"
+      class="button-reject disabled"
+      onclick="return false;"
+      >reject</a
+    >
+    <% } %>
+  </div>
+  <% } %>
+</div>
+
+<style>
+  .reqItem {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .button-accept,
+  .button-reject {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    cursor: pointer;
+  }
+
+  .button-reject {
+    background-color: #f44336;
+  }
+
+  .status {
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .status.pending {
+    color: #f39c12;
+    background-color: #f9e79f;
+  }
+
+  .status.accepted {
+    color: #27ae60;
+    background-color: #a2d9a1;
+  }
+
+  .status.rejected {
+    color: #c0392b;
+    background-color: #f5b7b1;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+</style>

@@ -86,9 +86,16 @@
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-  const unavailableDates = "<%= JSON.stringify(unavailableDates) %>".split(",");
+<script src="https://cdn.jsdelivr.net/npm/he@1.2.0/he.js"></script>
 
+<script>
+  const encodedUnavailableDates = "<%= unavailableDatesRanges %>";
+  console.log(encodedUnavailableDates);
+  const decodedUnavailableDates = he.decode(encodedUnavailableDates);
+  console.log(decodedUnavailableDates);
+  const unavailableDates = JSON.parse(decodedUnavailableDates);
+
+  console.log(unavailableDates);
   flatpickr("#date-range", {
     mode: "range",
     disable: unavailableDates,

@@ -1,6 +1,23 @@
 // bookingRequestPost.js
-exports.bookingRequestPost = function (req, res) {
-  res.send(req.body);
+const Booking = require("../models/Booking");
+
+exports.bookingRequestPost = async function (req, res) {
   const dateRange = req.body["date-range"].split(" to ");
-  res.send(dateRange);
+  const booking = await new Booking({
+    car: req.body.car,
+    owner: req.body.owner,
+    renter: req.user._id,
+    startDate: dateRange[0],
+    endDate: dateRange[1],
+  });
+  await booking
+    .save()
+    .then(function (newBooking) {
+      console.log("a new booking has been saved: ", newBooking);
+    })
+    .catch(function (err) {
+      console.log(`an error occurred: ${err.message}`);
+    });
+
+  res.redirect("/user/history");
 };

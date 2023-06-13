@@ -3,14 +3,17 @@ const mongoose = require("mongoose");
 const bookingSchema = new mongoose.Schema({
   car: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: "Car",
     required: true,
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
     required: true,
   },
   renter: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
     required: true,
   },
   startDate: {
@@ -20,6 +23,11 @@ const bookingSchema = new mongoose.Schema({
   endDate: {
     type: String,
     required: true,
+  },
+  status: {
+    type: String,
+    enum: ["pending", "accepted", "rejected"],
+    default: "pending",
   },
 });
 

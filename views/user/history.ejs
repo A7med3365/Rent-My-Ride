@@ -1,0 +1,69 @@
+<div class="bookings">
+  <% for( booking of userBookings ) { %>
+  <div class="bookItem">
+    <h4>
+      <%= booking.car.carMake %> <%= booking.car.carModel %> <%=
+      booking.car.carYear %>
+    </h4>
+    <p>car ID: <%= booking.car._id %></p>
+    <p>owner: <%= booking.owner.firstName %> <%= booking.owner.lastName %></p>
+    <p>booked from: <%= booking.startDate %></p>
+    <p>booked to: <%= booking.endDate %></p>
+    <p class="status <%= booking.status.toLowerCase() %>">
+      <%= booking.status %>
+    </p>
+    <button class="cancel-button">cancel</button>
+  </div>
+  <% } %>
+</div>
+
+<style>
+  .bookItem {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .status {
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .status.pending {
+    color: #f39c12;
+    background-color: #f9e79f;
+  }
+
+  .status.accepted {
+    color: #27ae60;
+    background-color: #a2d9a1;
+  }
+
+  .status.rejected {
+    color: #c0392b;
+    background-color: #f5b7b1;
+  }
+
+  .cancel-button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #f44336;
+    border: none;
+    cursor: pointer;
+  }
+</style>
