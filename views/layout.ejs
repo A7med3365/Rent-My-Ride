@@ -12,10 +12,16 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tillana&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tillana&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
 
     <style>
       .dropdown {
@@ -54,7 +60,7 @@
     <header>
       <nav>
         <ul class="container-nav-logo">
-          <img id="image-logo" src="/images/steering-wheel.png">
+          <img id="image-logo" src="/images/steering-wheel.png" />
           <li id="logo"><a href="/">RENT MY RIDE</a></li>
           <% if (currentUser) {%> <% if (currentUser.userType == 'admin') {%>
           <li class="navbar">
@@ -84,7 +90,7 @@
           </li>
           <% } %>
         </ul>
-        <hr>
+        <hr />
       </nav>
     </header>
     <%- body %>

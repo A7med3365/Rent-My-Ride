@@ -1,55 +1,96 @@
-
-
-<form method="POST" action="cars/bookingRequest">
-    <div class="main-bookreq">
-        <form>
-            <div id="bookreq-heading">
-                <h1>Request to book</h1>
-            </div>
-            <div class="bookreq-div">
-                <div>
-                    <h3>Choose how to pay</h3>
-                </div>
-                <div>
-                    <input type="checkbox" id="full" name="full" value="pay-in-full">
-                    <label>Pay in full</label>
-                    <input type="checkbox" id="part" name="part" value="pay-part">
-                    <label>Pay part now, part later</label>
-                </div>
-                
-            </div>
-            
-            <div class="bookreq-div">
-                <label>Pay with</label>
-                <select name="payment-method" id="payment">
-                    <option value="Credit-or-debit-card">Credit or debit card</option>
-                    <option value="PayPal">PayPal</option>
-                    <option value="Google-pay">Google pay</option>
-                    <option value="Cash">Cash</option>
-                </select>
-            </div>
-            
-            <div class="bookreq-div">
-                <h3>Cancellation policy</h3>
-                <p>Free cancellation 48 hours before pick up</p>
-            </div>
-            
-            <div class="bookreq-div">
-                <h3>Ground rules</h3>
-                <p>What makes a renter a great renter is following the owner's rules and treating the owner's vehicle like your own</p>
-            </div>
-            
-            <div class="bookreq-div">
-                <h2>Your reservation will not be confirmed until the owner acceps your request to book.</h2>
-            </div>
-            
-            <div class="bookreq-div">
-                <p>By selecting the button below, I agree to the Owner's Rules, Ground rules for <br>renters, Carsurf's Rebooking and Refund Policy, and that Carsurf can charge my payment method if I have caused any damage.<br> I agree to pay the total amount shown if the owner accepts my booking request.</p>
-                <p>I agree to the Terms of Service, Payments Terms of Service, and Privacy Policy.</p>
-            </div>
-            <div>
-                <button class="reqtobook-btn">Request to book</button>
-            </div>
-        </form>
+<form method="POST" action="bookingRequest">
+  <div class="main-bookreq">
+    <div id="bookreq-heading">
+      <h1>Request to book</h1>
     </div>
+    <div class="bookreq-div">
+      <div>
+        <h3>Choose your dates</h3>
+      </div>
+      <div>
+        <label for="date-range">Date Range:</label>
+        <input type="text" id="date-range" name="date-range" required />
+        <br /><br />
+        <input
+          style="display: none"
+          type="text"
+          name="car"
+          value="<%= carId %>"
+        />
+        <input
+          style="display: none"
+          type="text"
+          name="owner"
+          value="<%= ownerId %>"
+        />
+      </div>
+      <div>
+        <h3>Choose how to pay</h3>
+      </div>
+      <div>
+        <input type="checkbox" id="full" name="full" value="pay-in-full" />
+        <label>Pay in full</label>
+        <input type="checkbox" id="part" name="part" value="pay-part" />
+        <label>Pay part now, part later</label>
+      </div>
+    </div>
+
+    <div class="bookreq-div">
+      <label>Pay with</label>
+      <select name="payment-method" id="payment">
+        <option value="Credit-or-debit-card">Credit or debit card</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Google-pay">Google pay</option>
+        <option value="Cash">Cash</option>
+      </select>
+    </div>
+
+    <div class="bookreq-div">
+      <h3>Cancellation policy</h3>
+      <p>Free cancellation 48 hours before pick up</p>
+    </div>
+
+    <div class="bookreq-div">
+      <h3>Ground rules</h3>
+      <p>
+        What makes a renter a great renter is following the owner's rules and
+        treating the owner's vehicle like your own
+      </p>
+    </div>
+
+    <div class="bookreq-div">
+      <h2>
+        Your reservation will not be confirmed until the owner acceps your
+        request to book.
+      </h2>
+    </div>
+
+    <div class="bookreq-div">
+      <p>
+        By selecting the button below, I agree to the Owner's Rules, Ground
+        rules for <br />renters, Carsurf's Rebooking and Refund Policy, and that
+        Carsurf can charge my payment method if I have caused any damage.<br />
+        I agree to pay the total amount shown if the owner accepts my booking
+        request.
+      </p>
+      <p>
+        I agree to the Terms of Service, Payments Terms of Service, and Privacy
+        Policy.
+      </p>
+    </div>
+
+    <div>
+      <button class="reqtobook-btn">Request to book</button>
+    </div>
+  </div>
 </form>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  const unavailableDates = "<%= JSON.stringify(unavailableDates) %>".split(",");
+
+  flatpickr("#date-range", {
+    mode: "range",
+    disable: unavailableDates,
+  });
+</script>
