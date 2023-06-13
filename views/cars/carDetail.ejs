@@ -1,10 +1,33 @@
 <h1 class="car-detail-heading">Your Deal</h1>
 
+<div class="slideshow-container">
+
+    <% for(i in car.carImages) {%>
+        <div class="mySlides fade">
+        <div class="numbertext"><%= Number(i) + 1  %> / <%= car.carImages.length %></div>
+        <img class="car-img-upload" src=<%= car.carImages[i].path.replace("public", "") %>>
+
+    </div>
+    <% } %>
+    
+
+    
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+<div>
+    <span class="dot" onclick="currentSlide(1)"></span>
+</div>
+
+
+
 <div class="main-div">
+    
     <div class="sub-div">
-        <div class="car-img-upload">
-            <img <%= car.carImages %>>
-        </div>
+        
         <div class="subsecond-div">
             <h3>Model: <%= car.carModel %></h3>
             <ul>

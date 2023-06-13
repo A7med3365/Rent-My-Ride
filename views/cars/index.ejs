@@ -73,7 +73,7 @@
         <h4><%= car.carMake %> <%= car.carModel %></h4>
         <p><%= car.carType %></p>
         <!-- replace image with uploads -->
-        <img class="carImg" src="https://s3.us-east-2.amazonaws.com/dealer-inspire-vps-vehicle-images/1457-110005588/KMHLL4AG5PU574454/1dac1247f43c07d38b9ce87840fcfd00.jpg">
+        <img class="carImg" src=<%= car.carImages[0].path.replace("public", "") %>>
         <div class="price-rating">
             <div class="seats-rates">
                 <div class="seatCount"><img

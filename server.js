@@ -30,6 +30,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+app.use('/images', express.static('images'))
 
 app.use(express.urlencoded({ extended: true }));
 

@@ -46,7 +46,7 @@ exports.signupPost = async function (req, res) {
       .catch(function (err) {
         console.log(`an error occurred: ${err.message}`);
       });
-    res.render("home/index"); // we will change this to something else
+    res.redirect("/user/signin"); // we will change this to something else
   } catch (err) {
     console.log(err.message);
     res.send(err.message);

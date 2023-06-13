@@ -4,7 +4,7 @@ const Car = require('../models/Car');
 
 exports.car_detail_get = async (req, res) => {
     try {
-        const car = await Car.findById(req.query.id);
+        const car = await Car.findById(req.query.id).populate('carImages');
         console.log('car')
         res.render('cars/carDetail', {car});
     } catch (error) {
