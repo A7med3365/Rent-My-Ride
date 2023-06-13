@@ -1,10 +1,48 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 <!-- images not working ?? replaced them with google imgs but left  -->
 <div class="hero-image">
     <!-- <img src="/images/hero-image-car.png"> -->
     <img class="hero-image" src="https://www.pngmart.com/files/16/Side-View-Lamborghini-Car-Transparent-Background.png">
 </div>
+
+<div class="headerSurround">
+    <div class="carHeaderSearch">
+        <div class="headerSearchLeft">
+            <h2>Renting a car has never been easier</h2>
+            <p>A super easy way to rent a car directly from its owner or put your own car up for rent in minutes!</p>
+        </div>
+        <div class="headerSearchForm">
+            <form class="headerForm" method="POST" action="/cars/search">
+                <div class="headSearchTopRow">
+                    <h5> <span class="fa fa-map" style="color: #000000;"></span> Pick-up</h5>
+                    <input type="text" id="pickUpLocation" name="pickUpLocation" value="Manama, Bahrain">
+
+                    <h5> <span class="fa fa-map" style="color: #000000;"></span> Drop-off</h5>
+                    <input type="text" id="dropOffLocation" name="dropOffLocation" value="Manama, Bahrain">
+
+                </div>
+                <div class="headSearchDateRow">
+                    <h5> <span class="fa fa-calendar" style="color: #000000;"></span> Pick-up Date</h5>
+                    <input type="date" id="pickUpDate" name="pickUpDate" value="">
+                    <h5> <span class="fa fa-calendar" style="color: #000000;"></span> Drop-off Date</h5>
+                    <input type="date" id="dropOffDate" name="dropOffDate" value="">
+                </div>
+                <div class="headSearchTimeRow">
+                    <h5> <span class="fa fa-bell" style="color: #000000;"></span> Pick-up Time</h5>
+                    <input type="time" id="pickUpTime" name="pickUpTime" value="10:00:00">
+                    <h5> <span class="fa fa-bell" style="color: #000000;"></span> Drop-off Time</h5>
+                    <input type="time" id="dropOffTime" name="dropOffTime" value="10:00:00">
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
 
 <div class="boxes">
     <div class="box-one">
@@ -38,7 +76,8 @@
         <div class="select-rating">
             <div class="seats-rates">
                 <div class="seatCount"><img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuV0L5hVGOf4Z7Kdd8nvV0tBeZV_Wnhf08SA&usqp=CAU"> 5
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuV0L5hVGOf4Z7Kdd8nvV0tBeZV_Wnhf08SA&usqp=CAU">
+                    5
                 </div>
                 <div class="rating"><span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -56,7 +95,8 @@
         <div class="select-rating">
             <div class="seats-rates">
                 <div class="seatCount"><img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuV0L5hVGOf4Z7Kdd8nvV0tBeZV_Wnhf08SA&usqp=CAU"> 4
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuV0L5hVGOf4Z7Kdd8nvV0tBeZV_Wnhf08SA&usqp=CAU">
+                    4
                 </div>
                 <div class="rating"><span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -75,7 +115,8 @@
         <div class="select-rating">
             <div class="seats-rates">
                 <div class="seatCount"><img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuV0L5hVGOf4Z7Kdd8nvV0tBeZV_Wnhf08SA&usqp=CAU"> 4
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuV0L5hVGOf4Z7Kdd8nvV0tBeZV_Wnhf08SA&usqp=CAU">
+                    4
                 </div>
                 <div class="rating"><span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
