@@ -4,7 +4,7 @@
 Rent My Ride is a car rental application where users can upload their cars to be rented by other users. Users can:
  
  * See a list of all the cars available to be rented
- * Check the availibility of the car they would like to book
+ * Check the availability of the car they would like to book
  * Chat with the owner of the car
  * Book or reserve the car
 
