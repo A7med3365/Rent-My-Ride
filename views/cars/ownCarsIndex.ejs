@@ -8,6 +8,9 @@
   <div class="buttons">
     <a href="/cars/editCarForm?id=<%= car._id %>" class="edit-button">Edit</a>
     <a href="/cars/carDetail?id=<%= car._id %>" class="view-button">View</a>
+    <a href="/ownCarsIndex/delete?id=<%= car._id %>" class="delete-button"
+      >Delete</a
+    >
   </div>
 </div>
 <% } %>
@@ -60,5 +63,26 @@
   #new-car {
     margin-top: 2%;
     margin-bottom: 2%;
+  }
+
+  .car .delete-button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #f44336; /* Red */
+  }
+
+  .car .delete-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+  .car .view-button:hover {
+    background-color: #10498a; /* Darker blue on hover */
+  }
+  .car .edit-button:hover {
+    background-color: #29642c; /* Darker green on hover */
   }
 </style>

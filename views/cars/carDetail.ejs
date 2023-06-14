@@ -1,7 +1,7 @@
 <h1 class="car-detail-heading">Your Deal</h1>
 
 <div class="slideshow-container">
-  <% for(i in car.carImages) {%>
+  <% for(let i = 0; i < car.carImages.length; i++) {%>
   <div class="mySlides fade">
     <div class="numbertext">
       <%= Number(i) + 1 %> / <%= car.carImages.length %>
@@ -9,15 +9,18 @@
     <img class="car-img-upload" src=<%= car.carImages[i].path.replace("public",
     "") %>>
   </div>
+  <div style="text-align: center"></div>
   <% } %>
 
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <!-- <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div> -->
 </div>
 <br />
-<div>
-  <span class="dot" onclick="currentSlide(1)"></span>
-</div>
 
 <div class="main-div">
   <div class="sub-div">
@@ -54,13 +57,12 @@
     <p>BHD <%= car.dailyPrice %></p>
     <hr />
     <button class="detail-btn">
-      <a
-        href="/cars/bookingRequest?carId=<%= car._id %>&ownerId=<%= car.carOwner._id %>"
-        >Reserve</a
-      >
+      <a href="/cars/bookingRequest">Reserve</a>
     </button>
     <button class="detail-btn">
-      Contact Owner <%= car.carOwner.firstName %>
+      <a href="/test/chat?receiverId=<%= car.carOwner._id %>"
+        >Contact Owner <%= car.carOwner.firstName %></a
+      >
     </button>
   </div>
 </div>

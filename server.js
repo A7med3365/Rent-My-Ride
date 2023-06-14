@@ -30,7 +30,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
-app.use('/images', express.static('images'))
+app.use("/images", express.static("images"));
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -73,6 +73,9 @@ const userIndexGetRouter = require("./routes/userIndexGet");
 const viewProfileGetRouter = require("./routes/viewProfileGet");
 const userCarPostsGetRouter = require("./routes/userCarPostsGet");
 const aboutRouter = require("./routes/aboutIndex");
+const userIndexDeleteRoute = require("./routes/userIndexDelete");
+const carPostDeleteRoute = require("./routes/carPostDelete");
+const changePasswordRoute = require("./routes/changePassword");
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -100,16 +103,16 @@ app.use("/", multiFileUploadGetRouter);
 app.use("/", rentOutPostRoute);
 app.use("/", carDetailRoute);
 app.use("/", chatClientTestGetRouter);
-app.use('/', editCarFormPostRouter);
-app.use('/', editCarFormRouter);
-app.use('/', requestCancelPostRouter);
-app.use('/', rejectReqPostRouter);
-app.use('/', acceptReqPostRouter);
-app.use('/', requestsIndexGetRouter);
-app.use('/', historyGetRouter);
-app.use('/', bookingRequestPostRouter);
-app.use('/', calTestPostRouter);
-app.use('/', calTestGetRouter);
+app.use("/", editCarFormPostRouter);
+app.use("/", editCarFormRouter);
+app.use("/", requestCancelPostRouter);
+app.use("/", rejectReqPostRouter);
+app.use("/", acceptReqPostRouter);
+app.use("/", requestsIndexGetRouter);
+app.use("/", historyGetRouter);
+app.use("/", bookingRequestPostRouter);
+app.use("/", calTestPostRouter);
+app.use("/", calTestGetRouter);
 app.use("/", viewProfileGetRouter);
 app.use("/", userIndexGetRouter);
 app.use("/", chatsIndexGetRouter);
@@ -117,6 +120,9 @@ app.use("/", userCarPostsGetRouter);
 app.use("/", carsIndexRoute);
 app.use("/", bookingRequestRoute);
 app.use("/", aboutRouter);
+app.use("/", userIndexDeleteRoute);
+app.use("/", carPostDeleteRoute);
+app.use("/", changePasswordRoute);
 
 const onConn = require("./config/chat/onConn");
 
