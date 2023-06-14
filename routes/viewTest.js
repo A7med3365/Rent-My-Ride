@@ -9,4 +9,5 @@ router.get("/test-login", viewTestCtrl.loginTest);
 router.get("/test-profile", viewTestCtrl.profileTest);
 router.get("/test-editProfile", viewTestCtrl.editProfileTest);
 router.get("/test-cars", viewTestCtrl.carsTest);
+router.get("/test-about", viewTestCtrl.aboutTest);
 module.exports = router;

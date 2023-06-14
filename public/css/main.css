@@ -572,3 +572,21 @@ a {
   border-radius: 5px;
   margin: 20px;
 }
+
+/*--------------------------------------------About Page CSS-------------------------------------------- */
+
+.about-h1, .answer, .question{
+  display: flex;
+  justify-content: center;
+}
+
+.about-faqs{
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.question{
+  border: 1px solid rgb(200, 200, 200);
+  background-color: beige;
+  margin: 5px;
+}

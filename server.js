@@ -69,6 +69,7 @@ const rejectReqPostRouter = require("./routes/rejectReqPost");
 const userIndexGetRouter = require("./routes/userIndexGet");
 const viewProfileGetRouter = require("./routes/viewProfileGet");
 const userCarPostsGetRouter = require("./routes/userCarPostsGet");
+const aboutRouter = require("./routes/aboutIndex");
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -109,6 +110,7 @@ app.use("/", chatsIndexGetRouter);
 app.use("/", userCarPostsGetRouter);
 app.use("/", carsIndexRoute);
 app.use("/", bookingRequestRoute);
+app.use("/", aboutRouter);
 
 const onConn = require("./config/chat/onConn");
 
