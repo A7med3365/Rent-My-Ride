@@ -30,6 +30,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+app.use('/images', express.static('images'))
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -58,6 +59,13 @@ const bookingRequestRoute = require("./routes/bookingRequest");
 const chatsIndexGetRouter = require("./routes/chatsIndexGet");
 const multiFileUploadGetRouter = require("./routes/multiFileUploadGet");
 const multiFileUploadPostRouter = require("./routes/multiFileUploadPost");
+const calTestGetRouter = require("./routes/calTestGet");
+const calTestPostRouter = require("./routes/calTestPost");
+const bookingRequestPostRouter = require("./routes/bookingRequestPost");
+const historyGetRouter = require("./routes/historyGet");
+const requestsIndexGetRouter = require("./routes/requestsIndexGet");
+const acceptReqPostRouter = require("./routes/acceptReqPost");
+const rejectReqPostRouter = require("./routes/rejectReqPost");
 const userIndexGetRouter = require("./routes/userIndexGet");
 const viewProfileGetRouter = require("./routes/viewProfileGet");
 const userCarPostsGetRouter = require("./routes/userCarPostsGet");
@@ -88,6 +96,13 @@ app.use("/", multiFileUploadGetRouter);
 app.use("/", rentOutPostRoute);
 app.use("/", carDetailRoute);
 app.use("/", chatClientTestGetRouter);
+app.use('/', rejectReqPostRouter);
+app.use('/', acceptReqPostRouter);
+app.use('/', requestsIndexGetRouter);
+app.use('/', historyGetRouter);
+app.use('/', bookingRequestPostRouter);
+app.use('/', calTestPostRouter);
+app.use('/', calTestGetRouter);
 app.use("/", viewProfileGetRouter);
 app.use("/", userIndexGetRouter);
 app.use("/", chatsIndexGetRouter);

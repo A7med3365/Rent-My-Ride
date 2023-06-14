@@ -3,7 +3,7 @@ const Car = require('../models/Car');
 
 exports.index_detail_get = async (req, res) => {
     try {
-        const cars = await Car.find();
+        const cars = await Car.find().populate('carImages');
         console.log("Car", cars);
         res.render('cars/index', { cars });
     } catch (error) {

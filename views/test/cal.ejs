@@ -1,0 +1,17 @@
+<h1>Select a Date Range</h1>
+<form action="cal" method="post">
+  <label for="date-range">Date Range:</label>
+  <input type="text" id="date-range" name="date-range" required />
+  <br /><br />
+  <input type="submit" value="Submit" />
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  const unavailableDates = "<%= JSON.stringify(unavailableDates) %>".split(",");
+
+  flatpickr("#date-range", {
+    mode: "range",
+    disable: unavailableDates,
+  });
+</script>

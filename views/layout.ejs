@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carsurf</title>
+    <title>Rent my Ride</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
       rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tillana&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
 
     <style>
@@ -50,7 +60,8 @@
     <header>
       <nav>
         <ul class="container-nav-logo">
-          <li class="logo"><a href="/">Car Surf</a></li>
+          <img id="image-logo" src="/images/steering-wheel.png" />
+          <li id="logo"><a href="/">RENT MY RIDE</a></li>
           <% if (currentUser) {%> <% if (currentUser.userType == 'admin') {%>
           <li class="navbar">
             <a class="navbar" href="/admin/Dashboard">Admins Dashboard</a>
@@ -64,9 +75,9 @@
             <div class="dropdown-content">
               <a class="dropdown-item" href="/user/profile">Profile</a>
               <a class="dropdown-item" href="/user/posts">Posts</a>
+              <a class="dropdown-item" href="/user/requests">Requests</a>
               <a class="dropdown-item" href="/user/history">History</a>
               <a class="dropdown-item" href="/user/chats">Chats</a>
-              <a class="dropdown-item" href="/user/disputes">Disputes</a>
             </div>
           </li>
           <a href="/user/signout">Log Out</a>
@@ -79,7 +90,7 @@
           </li>
           <% } %>
         </ul>
-        <hr>
+        <hr />
       </nav>
     </header>
     <%- body %>
