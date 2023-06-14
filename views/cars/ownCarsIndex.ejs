@@ -4,7 +4,9 @@
 
 <% for( car of cars ) { %>
 <div class="car">
-  <a href=""><%= car.carMake %> <%= car.carModel %> <%= car.carYear %></a>
+  <a href="/cars/carDetail?id=<%=car._id%>"
+    ><%= car.carMake %> <%= car.carModel %> <%= car.carYear %></a
+  >
 </div>
 <% } %>
 
