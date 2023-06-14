@@ -7,7 +7,6 @@
     </h4>
     <p>car ID: <%= booking.car._id %></p>
     <p>owner: <%= booking.owner.firstName %> <%= booking.owner.lastName %></p>
-    <p>booked from: <%= booking.startDate %></p>
     <p>booked to: <%= booking.endDate %></p>
     <p class="status <%= booking.status.toLowerCase() %>">
       <%= booking.status %>
