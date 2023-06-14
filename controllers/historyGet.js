@@ -6,6 +6,5 @@ exports.historyGet = async function (req, res) {
     .populate("car")
     .populate("owner");
 
-  console.log(userBookings);
   res.render("user/history", { userBookings });
 };

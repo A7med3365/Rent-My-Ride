@@ -57,7 +57,10 @@
     <p>BHD <%= car.dailyPrice %></p>
     <hr />
     <button class="detail-btn">
-      <a href="/cars/bookingRequest">Reserve</a>
+      <a
+        href="/cars/bookingRequest?carId=<%= car._id %>&ownerId=<%= car.carOwner._id %>"
+        >Reserve</a
+      >
     </button>
     <button class="detail-btn">
       <a href="/test/chat?receiverId=<%= car.carOwner._id %>"
