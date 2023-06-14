@@ -1,0 +1,111 @@
+<h1 id="rentOutHeading">Rent Out My Vehicle</h1>
+
+<form
+  class="rentOutForm"
+  method="POST"
+  action="/cars/editCarForm?id=<%= car._id %>"
+>
+  <div>
+    <label class="rentOut-label">Car Make</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="carMake"
+      value="<%= car.carMake %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Car Model</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="carModel"
+      value="<%= car.carModel %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Year</label>
+    <input
+      class="rentOut-input"
+      type="number"
+      name="carYear"
+      value="<%= car.carYear %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Car Type</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="carType"
+      value="<%= car.carType %>"
+    />
+  </div>
+
+  <div>
+    <label class="rentOut-label">Fuel Tank Size</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="fuelTankSize"
+      value="<%= car.fuelTankSize %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Fuel Type</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="fuelType"
+      value="<%= car.fuelType %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Number of Seats</label>
+    <input
+      class="rentOut-input"
+      type="number"
+      name="numberOfSeats"
+      value="<%= car.numberOfSeats %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Number of Doors</label>
+    <input
+      class="rentOut-input"
+      type="number"
+      name="numberOfDoors"
+      value="<%= car.numberOfDoors %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Features</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="features"
+      value="<%= car.features %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Description</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="description"
+      value="<%= car.description %>"
+    />
+  </div>
+  <div>
+    <label class="rentOut-label">Price per Day</label>
+    <input
+      class="rentOut-input"
+      type="text"
+      name="dailyPrice"
+      value="<%= car.dailyPrice %>"
+    />
+  </div>
+  <div>
+    <input class="submit-btn" type="submit" />
+  </div>
+</form>

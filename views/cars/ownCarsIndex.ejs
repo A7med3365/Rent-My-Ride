@@ -2,11 +2,13 @@
   <a href="/cars/rentOutForm">Add a new car</a>
 </div>
 
-<% for( car of cars ) { %>
+<% for (car of cars) { %>
 <div class="car">
-  <a href="/cars/carDetail?id=<%=car._id%>"
-    ><%= car.carMake %> <%= car.carModel %> <%= car.carYear %></a
-  >
+  <span><%= car.carMake %> <%= car.carModel %> <%= car.carYear %></span>
+  <div class="buttons">
+    <a href="/cars/editCarForm?id=<%= car._id %>" class="edit-button">Edit</a>
+    <a href="/cars/carDetail?id=<%= car._id %>" class="view-button">View</a>
+  </div>
 </div>
 <% } %>
 
@@ -24,12 +26,35 @@
     font-size: 16px;
   }
 
-  .car a {
+  .car span {
     display: block;
     height: 100%;
     width: 100%;
     color: black;
     text-decoration: none;
+  }
+
+  .car .buttons {
+    margin-top: 10px;
+  }
+
+  .car .edit-button,
+  .car .view-button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .car .edit-button {
+    background-color: #4caf50; /* Green */
+  }
+
+  .car .view-button {
+    background-color: #2196f3; /* Blue */
   }
 
   #new-car {
