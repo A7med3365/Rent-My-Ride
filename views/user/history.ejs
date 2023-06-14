@@ -11,7 +11,12 @@
     <p class="status <%= booking.status.toLowerCase() %>">
       <%= booking.status %>
     </p>
-    <button class="cancel-button">cancel</button>
+    <a class="cancel-button" href="/request/cancel?bookingId=<%= booking._id %>"
+      >cancel</a
+    >
+    <a class="chat-button" href="/test/chat?receiverId=<%= booking.owner._id %>"
+      >chat with <%= booking.owner.firstName %></a
+    >
   </div>
   <% } %>
 </div>
@@ -64,5 +69,19 @@
     background-color: #f44336;
     border: none;
     cursor: pointer;
+  }
+
+  .chat-button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2196f3; /* Blue color, you can customize it */
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
   }
 </style>

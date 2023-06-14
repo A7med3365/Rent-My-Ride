@@ -10,8 +10,8 @@ exports.rejectReqPost = async function (req, res) {
   booking.status = "rejected";
 
   //when rejected we need to clear the booking dates in the database
-  // booking.startDate = "";
-  // booking.endDate = "";
+  booking.startDate = "0000-00-00";
+  booking.endDate = "0000-00-00";
 
   await booking
     .save()
