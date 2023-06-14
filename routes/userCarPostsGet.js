@@ -5,7 +5,7 @@ const isLoggedin = require("../config/Auth/ensureAthenticated");
 const router = express.Router();
 
 router.get(
-  "/user/posts",
+  "/cars/ownCarsIndex",
   isLoggedin.ensureAthenticated,
   userCarPostsGetCtrl.userCarPostsGet
 );

@@ -7,6 +7,10 @@
   <a href="/cars/carDetail?id=<%=car._id%>"
     ><%= car.carMake %> <%= car.carModel %> <%= car.carYear %></a
   >
+
+  <form method="POST" action="/ownCarsIndex/delete?id=<%= car._id %>">
+    <button>DELETE POST</button>
+  </form>
 </div>
 <% } %>
 

@@ -4,6 +4,9 @@
     <%= user.firstName %> <%= user.lastName %>
   </a>
 </div>
+<form method="POST" action="/userIndex/delete?id=<%= user._id%> ">
+  <button>Delete User</button>
+</form>
 <% } %>
 
 <style>

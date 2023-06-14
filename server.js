@@ -62,6 +62,9 @@ const multiFileUploadPostRouter = require("./routes/multiFileUploadPost");
 const userIndexGetRouter = require("./routes/userIndexGet");
 const viewProfileGetRouter = require("./routes/viewProfileGet");
 const userCarPostsGetRouter = require("./routes/userCarPostsGet");
+const userIndexDeleteRoute = require('./routes/userIndexDelete');
+const carPostDeleteRoute = require('./routes/carPostDelete');
+const changePasswordRoute = require('./routes/changePassword');
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
@@ -95,6 +98,9 @@ app.use("/", chatsIndexGetRouter);
 app.use("/", userCarPostsGetRouter);
 app.use("/", carsIndexRoute);
 app.use("/", bookingRequestRoute);
+app.use('/', userIndexDeleteRoute);
+app.use('/', carPostDeleteRoute);
+app.use('/', changePasswordRoute);
 
 const onConn = require("./config/chat/onConn");
 
