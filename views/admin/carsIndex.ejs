@@ -1,6 +1,25 @@
-<% for (const car of cars) {%>
+<% for (const car of cars) { %>
 <div class="carI">
   <a href="/cars/carDetail?id=<%= car._id %>">
-    <%= car.carMake %> <%= user.carYear %>
+    <%= car.carMake %> <%= car.carYear %>
   </a>
+  <a class="deleteBtn" href="/admin/car/del?id=<%= car._id %>">Delete</a>
 </div>
+<% } %>
+
+<style>
+  .carI {
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .deleteBtn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+</style>

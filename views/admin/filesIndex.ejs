@@ -1,4 +1,33 @@
-<% for (const file of files) {%>
+<% for (const file of files) { %>
 <div class="fileI">
   <p><%= file.filename %></p>
+  <a class="viewBtn" href="/admin/file/view?path=<%= file.path %>">View</a>
+  <a class="deleteBtn" href="/admin/file/del?id=<%= file._id %>">Delete</a>
 </div>
+<% } %>
+
+<style>
+  .fileI {
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .viewBtn {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  .deleteBtn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+</style>
