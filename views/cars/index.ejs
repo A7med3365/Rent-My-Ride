@@ -70,8 +70,8 @@
    
 <% cars.forEach(function(car){ %>
     <div class="carsMiniDisplay">
-        <h4><%= car.carMake %> <%= car.carModel %></h4>
-        <p><%= car.carType %></p>
+        <h4 class="carName-index"><%= car.carMake %> <%= car.carModel %></h4>
+        <p class="carType-index"><%= car.carType %></p>
         <!-- replace image with uploads -->
         <img class="carImg" src=<%= car.carImages[0].path.replace("public", "") %>>
         <div class="price-rating">
@@ -88,7 +88,7 @@
             </div>
             <!-- replace pricing with dailyPrice input -->
             <div class="carPrice"><p>BHD <%= car.dailyPrice %> /day</p></div>
-            <button><a href="/cars/carDetail?id=<%=car._id%>">View Deal</a></button>
+            <button class="viewDealBtn"><a href="/cars/carDetail?id=<%=car._id%>">View Deal</a></button>
         </div>
     
     </div>

@@ -21,3 +21,9 @@ exports.editProfileTest = function (req, res) {
 exports.carsTest = function (req, res) {
   res.render("cars/index");
 };
+
+
+exports.aboutTest = function (req, res) {
+  res.render("about/index");
+};
+

@@ -1,6 +1,9 @@
 /* --------------------------------------------Logo and Nav Bar CSS--------------------------------------------*/
 body {
   font-family: "Quicksand", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -42,10 +45,18 @@ nav {
   align-items: center;
   background-color: lightslategray;
   height: 200px;
+  width: 100%;
+
 }
 
 footer {
   margin: 0 -10px -10px -10px;
+  margin-top: auto;
+  width: 98%;
+  /* position: fixed;
+  bottom: 0;
+  height: 200px;
+  width: 100%;  */
 }
 
 /* --------------------------------------------Sign Up CSS--------------------------------------------*/
@@ -296,6 +307,7 @@ a {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  width: 100%;
 }
 .rentCarBtn {
   border-radius: 30px;
@@ -486,11 +498,20 @@ a {
   width: 250px;
 }
 .carsMiniDisplay .carImg {
-  width: 50%;
+  width: 60%;
 }
 
 .carsMiniDisplay p {
   font-size: smaller;
+}
+
+.carName-index{
+  font-size: larger;
+  margin-bottom: 5px;
+}
+
+.carType-index{
+  font-size: larger;
 }
 
 /*--------------------------------------------Car Detail Page CSS-------------------------------------------- */
@@ -571,4 +592,34 @@ a {
   font-size: large;
   border-radius: 5px;
   margin: 20px;
+}
+
+/*--------------------------------------------About Page CSS-------------------------------------------- */
+
+.about-h1, .answer, .question{
+  display: flex;
+  justify-content: center;
+}
+
+.about-faqs{
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.question{
+  border: 1px solid rgb(200, 200, 200);
+  background-color: beige;
+  margin: 5px;
+}
+
+.viewDealBtn, .detail-btn{
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.viewDealBtn:hover, .detail-btn:hover{
+  background-color: #313131;
 }
