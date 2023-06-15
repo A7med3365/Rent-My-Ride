@@ -17,12 +17,12 @@ To post or book a car, users need to:
 * Renters and owners can chat with each other to establish an agreement
 * The owner can accept or reject a booking request from any user
 ### ERD
-![ERD for Rent My Ride](images/ERD%20Car%20Rental%20App.png)
+![ERD for Rent My Ride](images\WhatsApp Image 2023-06-14 at 20.35.50.jpeg)
 #### **Wireframes**
 #### Home Page
-![Home Page WireFrame for Rent My Ride](images/homepage-wireframe-carRental.png)
+![Home Page WireFrame for Rent My Ride](images\WhatsApp Image 2023-06-14 at 20.35.50 (1).jpeg)
 #### Nav Bar, Footer & Sign Up
-![Other WireFrames for Rent My Ride](images/wireframes-carRental.png)
+![Other WireFrames for Rent My Ride](image\WhatsApp Image 2023-06-14 at 20.35.53.jpeg)
 #### **User Stories**
 ![User Stories Rent My Ride](images/Screen%20Shot%202023-06-14%20at%204.46.56%20PM.png)
 ![User Stories Rent My Ride](images/Screen%20Shot%202023-06-14%20at%204.53.10%20PM.png)
