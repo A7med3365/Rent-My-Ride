@@ -103,10 +103,10 @@ app.use("/", adminDashboardGetRouter);
 app.use("/", signoutGetRouter);
 app.use("/", rentOutGetRoute);
 app.use("/", multiFileUploadPostRouter);
-app.use('/', adminFileViewGetRouter);
-app.use('/', adminDelCarRouter);
-app.use('/', adminFilesListRouter);
-app.use('/', adminCarListRouter);
+app.use("/", adminFileViewGetRouter);
+app.use("/", adminDelCarRouter);
+app.use("/", adminFilesListRouter);
+app.use("/", adminCarListRouter);
 app.use("/", multiFileUploadGetRouter);
 app.use("/", rentOutPostRoute);
 app.use("/", carDetailRoute);
@@ -142,8 +142,23 @@ server.listen(port, function () {
   console.log("Server running on port 4001");
 });
 
+// mongoose
+//   .connect("mongodb+srv://Admin:34146466@carsurf.hxivufu.mongodb.net/", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(function () {
+//     console.log("mongoDB connected");
+//   })
+//   .catch(function (err) {
+//     console.log("mongoDB error: " + err.message);
+//   });
+
+require("dotenv").config(); // Load environment variables from .env file
+
 mongoose
-  .connect("mongodb+srv://Admin:34146466@carsurf.hxivufu.mongodb.net/", {
+  .connect(process.env.MONGODB_URI, {
+    // Use environment variable for connection string
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
